@@ -36,6 +36,9 @@ export default {
       this.info = {...this.info,...dataObj};
     })
   },
+  beforeDestroy() {
+    this.$bus.$off('updateListData');
+  },
 };
 </script>
 
