@@ -6,17 +6,17 @@
 </template>
 
 <script>
-import Search from './components/Search.vue'
-import MyList from './components/MyList.vue'
+import Search from "./components/Search.vue";
+import MyList from "./components/MyList.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Search,MyList
-  }
-}
+    Search,
+    MyList,
+  },
+};
 </script>
 
 <style>
-
 </style>

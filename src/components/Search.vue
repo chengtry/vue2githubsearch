@@ -13,30 +13,42 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "Search",
   data() {
     return {
-      keyWord:''
-    }
+      keyWord: "",
+    };
   },
   methods: {
-    searchUsers(){
+    searchUsers() {
       //请求前更新List数据
-      this.$bus.$emit('updateListData',{isFirst: false,isLoading: true,errMsg: '',users: []})
+      this.$bus.$emit("updateListData", {
+        isFirst: false,
+        isLoading: true,
+        errMsg: "",
+        users: [],
+      });
       axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
-        response =>{
+        (response) => {
           //console.log('请求成功！',response.data.items);
-      this.$bus.$emit('updateListData',{isLoading: false,errMsg: '',users: response.data.items})
+          this.$bus.$emit("updateListData", {
+            isLoading: false,
+            errMsg: "",
+            users: response.data.items,
+          });
         },
-        error =>{
+        (error) => {
           //console.log('请求失败！',error.message)
-          this.$bus.$emit('updateListData',{isLoading: false,errMsg: error.message,users: []})
-
+          this.$bus.$emit("updateListData", {
+            isLoading: false,
+            errMsg: error.message,
+            users: [],
+          });
         }
-      )
-    }
+      );
+    },
   },
 };
 </script>
