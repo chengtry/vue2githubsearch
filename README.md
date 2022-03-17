@@ -1,25 +1,9 @@
 # vue2githubsearch
 
-## Project setup
-```
-npm install
-```
+#  vue2demo--github搜索案例
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+根据github官方接口https://api.github.com/search/users?q=keyword
+用Vue2实现搜索相关内容，展示图片，用户名信息。
+并且能够点击图片跳转对应github用户信息页面。
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
